@@ -61,8 +61,8 @@ export default {
       modalForm: false,
       title: '新建系列',
       formItem: {
+        id: 0,
         title: '',
-        // radio: 'male',
         videos: 0,
         desc: '',
         order_sort: 0
@@ -120,9 +120,17 @@ export default {
       })
     },
     addHandle (scope) {
+      this.title = '标签-新增'
+      this.formItem.id = ''
+      this.formItem.title = ''
+      this.formItem.videos = ''
+      this.formItem.desc = ''
+      this.formItem.order_sort = ''
       this.modalForm = true
     },
     editHandle (scope) {
+      this.title = '标签-编辑'
+      this.formItem.id = scope.row.id
       this.formItem.title = scope.row.title
       this.formItem.videos = scope.row.videos
       this.formItem.desc = scope.row.desc
